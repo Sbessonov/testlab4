@@ -7,7 +7,7 @@ class Service:
         self.repository = repository
 
     def what_age(self, year):
-        return 2019 - year
+        return 2019 - year if year <= 2019 else None
 
     def get_friends_ages(self, user_id, count):
         pass
