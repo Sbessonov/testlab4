@@ -1,4 +1,4 @@
-from MyServer import MyHandler
+from server import MyHandler
 import socketserver
 import requests
 
