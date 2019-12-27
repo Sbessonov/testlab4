@@ -6,6 +6,6 @@ class User:
         self.last_name = None
         self.birth_date = None
         self.list_friends = None
-        self.zodiac = None
         self.domain = None
+        self.age = None
         self.city = None
