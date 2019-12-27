@@ -1,5 +1,5 @@
 import unittest
-from Classes.Repository import Repository
+from Classes.repository import Repository
 
 
 # Тест репозитория при создании

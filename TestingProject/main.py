@@ -6,6 +6,7 @@ import requests
 import json
 from Classes.moc_repository import MocRepository
 from Classes.service import Service
+#https://oauth.vk.com/blank.html#access_token=e08467d24e10ac132bb3962ba33ba3903947101733179a47a86160d1d8494106a325fe1cfeeb5a20a2da8&expires_in=0&user_id=136006081&email=serzh_bessonov@mail.ru
 
 # urlUser = 'http://testvk.com/method/users.get?user_ids=6&fields=bdate&access_token=lab4&v=5.103'
 # urlFrids = 'http://testvk.com/method/friends.get?user_id=6&count=5&fields=city,domain,bdate&access_token=lab4&v=5.103'
@@ -19,6 +20,4 @@ access_token = 'irina'
 http_string = 'http://irina/'
 rep = MocRepository(access_token, http_string)
 service = Service(rep)
-users = service.get_friends_zodiacs(500, 10)
-
-print(users)
+print('lklk')
