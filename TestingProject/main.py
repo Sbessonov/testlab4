@@ -4,8 +4,8 @@
 
 import requests
 import json
-from Classes.MyRepository import MyRepository
-from Classes.Service import Service
+from Classes.moc_repository import MocRepository
+from Classes.service import Service
 
 # urlUser = 'http://testvk.com/method/users.get?user_ids=6&fields=bdate&access_token=lab4&v=5.103'
 # urlFrids = 'http://testvk.com/method/friends.get?user_id=6&count=5&fields=city,domain,bdate&access_token=lab4&v=5.103'
@@ -17,8 +17,8 @@ from Classes.Service import Service
 
 access_token = 'irina'
 http_string = 'http://irina/'
-rep = MyRepository(access_token, http_string)
+rep = MocRepository(access_token, http_string)
 service = Service(rep)
-usesr = service.get_friends_zodiacs(500, 10)
+users = service.get_friends_zodiacs(500, 10)
 
-print(usesr)
+print(users)
