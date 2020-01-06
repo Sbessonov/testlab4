@@ -1,6 +1,6 @@
-#python -m unittest -v TestUser.py TestMyRepository.py TestRepository.py TestRepositoryIsolation.py TestService.py TestServiceIsolation.py TestUser.py
-#coverage run -m unittest TestUser.py TestMyRepository.py TestRepository.py TestRepositoryIsolation.py TestService.py TestServiceIsolation.py TestUser.py
-#coverage report -m
+# python -m unittest -v test_moc_repository.py test_repository.py test_init_repository.py test_service.py
+# TestServiceIsolation.py TestUser.py coverage run -m unittest TestUser.py TestMyRepository.py TestRepository.py
+# TestRepositoryIsolation.py TestService.py TestServiceIsolation.py TestUser.py coverage report -m
 
 import requests
 import json

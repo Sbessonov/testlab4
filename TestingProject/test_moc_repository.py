@@ -5,7 +5,7 @@ import Classes.moc_repository as moc_rep
 # Тест репозитория при создании
 class TestMocRepository(unittest.TestCase):
     def test_init_my_repository(self):
-        moc_rep.MocRepository = moc_rep.MocRepository('irina', 'http://test.vk')
+        MocRepository = moc_rep.MocRepository('irina', 'http://test.vk')
         self.assertEqual('irina', moc_rep.MocRepository.access_token)
         self.assertEqual('http://test.vk', moc_rep.MocRepository.http_string)
         self.assertEqual('', moc_rep.MocRepository.url)
