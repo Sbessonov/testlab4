@@ -1,6 +1,5 @@
 from server import MyHandler
 import socketserver
-import requests
 
 PORT = 80
 handler = MyHandler

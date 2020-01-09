@@ -18,7 +18,7 @@ class TestServiceIsolation(unittest.TestCase):
         rep = moc_repo.MocRepository(access_token, http_string)
         service = Service(rep)
         age = service.get_age(6)
-        self.assertEqual(117, age)
+        self.assertEqual(1, age)
 
     def test_not_get_age(self):
         access_token = 'irina'
@@ -34,7 +34,7 @@ class TestServiceIsolation(unittest.TestCase):
         rep = moc_repo.MocRepository(access_token, http_string)
         service = Service(rep)
         age = service.get_age(1)
-        self.assertEqual(35, age)
+        self.assertEqual(0, age)
 
     def test_get_age_incognito(self):
         access_token = 'irina'
@@ -58,7 +58,7 @@ class TestServiceIsolation(unittest.TestCase):
         rep = moc_repo.MocRepository(access_token, http_string)
         service = Service(rep)
         usesr = service.get_friends_ages(6, 10)
-        true_ages = [112, 112, 112, 'Unknown']
+        true_ages = [1, 1, 1, 'Unknown']
         new_ages = [usesr[0].age, usesr[1].age, usesr[2].age, usesr[3].age]
         self.assertEqual(true_ages, new_ages)
 

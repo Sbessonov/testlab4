@@ -1,15 +1,15 @@
 import enum
-from Classes.user import User
+from Classes.User import User
 
 
 class Service:
     def __init__(self, repository):
         self.repository = repository
 
-    def what_age(self, year):
-        return 2019 - year if year <= 2019 else None
+    def is_sum(self, day, month):
+        return (month + day)//2
 
-    def get_friends_ages(self, user_id, count):
+    def get_friends_sums(self, user_id, count):
         response = self.repository.getFriends(user_id, count)
         user = self.__pars_friensds(response.text, user_id)
         if user.user_id == -1:
@@ -20,23 +20,23 @@ class Service:
             else:
                 for friend in user.list_friends:
                     if friend.birth_date is None:
-                        friend.age = 'Unknown'
+                        friend.sum = 'Unknown'
                     else:
                         date = friend.birth_date
                         date = date.split('.')
-                        friend.age = self.what_age(int(date[2]))
+                        friend.sum = self.is_sum(int(date[0]), int(date[1]))
                 return user.list_friends
 
-    def get_age(self, user_id):
+    def get_sum(self, user_id):
         response = self.repository.getUser(user_id)
         user = self.__parse_user(response.text, user_id)
         if user.birth_date is not None:
             date = user.birth_date
             date = date.split('.')
-            user.age = self.what_age(int(date[2]))
+            user.sum = self.is_sum(int(date[0]), int(date[1]))
         else:
-            user.age = 'Дата рождения отсутствует'
-        return user.age
+            user.sum = 'Дата рождения отсутствует'
+        return user.sum
 
     def __parse_user(self, response, user_id):
         answer = response['response']
